@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap');
+
+:root {
+  --bg: #faf8f3;
+  --ink: #1c1a17;
+  --muted: #6f6a61;
+  --line: #e4ded3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+main {
+  max-width: 38rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 3rem;
+  background: #fff;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  margin: 0 0 1.2rem;
+}
+
+.lede { font-size: 1.15rem; margin: 0 0 1.5rem; }
+.note { color: var(--muted); font-size: 0.95rem; }
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1px;
+}
+a:hover { color: var(--muted); border-color: var(--muted); }
