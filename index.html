@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="The Mattering Kit" data-de="Jedes Kind zählt">The Mattering Kit</title>
+  <meta name="description" content="A free bilingual resource that helps teachers build a sense of mattering in every child, with no extra time and no budget.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#top">
+        <span class="glyph" aria-hidden="true"></span>
+        <span data-en="The Mattering Kit" data-de="Jedes Kind zählt">The Mattering Kit</span>
+      </a>
+      <nav class="lang-toggle" aria-label="Language">
+        <button type="button" data-lang-btn="en">EN</button>
+        <span class="lang-sep" aria-hidden="true"></span>
+        <button type="button" data-lang-btn="de">DE</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow" data-en="AN OPEN RESOURCE FOR EDUCATORS" data-de="EINE FREIE RESSOURCE FÜR LEHRKRÄFTE">AN OPEN RESOURCE FOR EDUCATORS</p>
+        <h1 class="headline" data-en="Every child should feel that they matter." data-de="Jedes Kind sollte spüren, dass es zählt.">Every child should feel that they matter.</h1>
+        <p class="subline" data-en="A small set of everyday habits that help teachers build that feeling, with no extra time and no budget." data-de="Eine kleine Sammlung alltäglicher Gewohnheiten, mit denen Lehrkräfte genau dieses Gefühl schaffen, ohne zusätzliche Zeit und ohne Budget.">A small set of everyday habits that help teachers build that feeling, with no extra time and no budget.</p>
+        <div class="hero-actions">
+          <a class="btn" href="mattering-kit.pdf" download data-en="Download the kit" data-de="Kit herunterladen">Download the kit</a>
+          <a class="ghost" href="#inside" data-en="See what's inside" data-de="Ein Blick hinein">See what's inside</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="inside">
+      <div class="container feature-grid">
+
+        <article class="pane">
+          <span class="marker" aria-hidden="true"></span>
+          <h2 class="pane-heading" data-en="Grounded in research" data-de="Wissenschaftlich fundiert">Grounded in research</h2>
+          <p class="pane-body" data-en="Built on a study of 700 people on how exclusion affects our sense of meaning, and what protects it." data-de="Basiert auf einer Studie mit 700 Personen dazu, wie Ausgrenzung das Sinnerleben beeinflusst, und was davor schützt.">Built on a study of 700 people on how exclusion affects our sense of meaning, and what protects it.</p>
+        </article>
+
+        <article class="pane">
+          <span class="marker" aria-hidden="true"></span>
+          <h2 class="pane-heading" data-en="Made with teachers" data-de="Mit Lehrkräften entwickelt">Made with teachers</h2>
+          <p class="pane-body" data-en="Shaped by interviews with teachers in the classrooms where it matters most, and reviewed by practitioners in prevention work." data-de="Entstanden aus Interviews mit Lehrkräften und geprüft von Fachleuten aus der Präventionsarbeit.">Shaped by interviews with teachers in the classrooms where it matters most, and reviewed by practitioners in prevention work.</p>
+        </article>
+
+        <article class="pane">
+          <span class="marker" aria-hidden="true"></span>
+          <h2 class="pane-heading" data-en="Free and open" data-de="Frei und offen">Free and open</h2>
+          <p class="pane-body" data-en="Bilingual, no sign-up, no cost. Download it today, use it tomorrow." data-de="Zweisprachig, ohne Anmeldung, ohne Kosten. Heute herunterladen, morgen einsetzen.">Bilingual, no sign-up, no cost. Download it today, use it tomorrow.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container closing-inner">
+        <p class="closing-line" data-en="Start making it count." data-de="Fangen Sie klein an, es zählt.">Start making it count.</p>
+        <a class="btn" href="mattering-kit.pdf" download data-en="Download the kit" data-de="Kit herunterladen">Download the kit</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p data-en="An independent research project by Jona Ragogna." data-de="Ein unabhängiges Forschungsprojekt von Jona Ragogna.">An independent research project by Jona Ragogna.</p>
+      <p class="footer-meta">© 2025 &nbsp;·&nbsp; <a href="https://jonaragogna.com">jonaragogna.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('[data-lang-btn]');
+    const nodes = document.querySelectorAll('[data-en]');
+    function setLang(lang){
+      document.documentElement.lang = lang;
+      nodes.forEach(n => { n.textContent = n.getAttribute('data-' + lang); });
+      buttons.forEach(b => b.classList.toggle('is-active', b.getAttribute('data-lang-btn') === lang));
+    }
+    buttons.forEach(b => b.addEventListener('click', () => setLang(b.getAttribute('data-lang-btn'))));
+    setLang('en');
+  </script>
+
+</body>
+</html>
