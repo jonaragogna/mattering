@@ -1,128 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="The Mattering Kit" data-de="Jedes Kind zählt">The Mattering Kit</title>
-  <meta name="description" content="A free bilingual resource that helps teachers build a sense of mattering in every child, with no extra time and no budget.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Jedes Kind zählt — eine freie Ressource für Lehrkräfte</title>
+<meta name="description" content="Eine Handvoll alltäglicher Gewohnheiten, mit denen Lehrkräfte Kindern das Gefühl geben, dass sie zählen. Kostenlos, zweisprachig, ohne Anmeldung.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jedes Kind zählt">
+<meta property="og:description" content="Eine Handvoll alltäglicher Gewohnheiten, mit denen Lehrkräfte Kindern das Gefühl geben, dass sie zählen. Kostenlos und frei nutzbar.">
+<meta property="og:url" content="https://jonaragogna.com">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23ffffff'/><rect x='10' y='10' width='12' height='12' fill='%235b7fa3'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="wordmark" href="#top">
-        <span class="glyph" aria-hidden="true"></span>
-        <span data-en="The Mattering Kit" data-de="Jedes Kind zählt">The Mattering Kit</span>
-      </a>
-      <nav class="lang-toggle" aria-label="Language">
-        <button type="button" data-lang-btn="en">EN</button>
-        <span class="lang-sep" aria-hidden="true"></span>
-        <button type="button" data-lang-btn="de">DE</button>
-      </nav>
+<a class="skip" href="#kit" data-en="Skip to the kit" data-de="Direkt zum Kit">Direkt zum Kit</a>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="wordmark">
+      <span class="glyph" aria-hidden="true"></span>
+      <span data-en="The Mattering Kit" data-de="Jedes Kind zählt">Jedes Kind zählt</span>
+    </div>
+
+    <div class="langswitch" role="group" data-en-label="Language" data-de-label="Sprache" aria-label="Sprache">
+      <button type="button" data-lang-btn="de" aria-pressed="true">DE</button>
+      <span class="langswitch-sep" aria-hidden="true"></span>
+      <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
     </div>
   </header>
 
-  <main id="top">
+  <main class="bento" id="kit">
 
-    <section class="hero">
-      <div class="container">
-        <p class="eyebrow" data-en="AN OPEN RESOURCE FOR EDUCATORS" data-de="EINE FREIE RESSOURCE FÜR LEHRKRÄFTE">AN OPEN RESOURCE FOR EDUCATORS</p>
-        <h1 class="headline" data-en="Every child should know they matter." data-de="Jedes Kind sollte wissen, dass es zählt.">Every child should know they matter.</h1>
-        <p class="subline" data-en="A small set of everyday habits that help teachers build that feeling, with no extra time and no budget." data-de="Eine kleine Sammlung alltäglicher Gewohnheiten, mit denen Lehrkräfte genau dieses Gefühl schaffen, ohne zusätzliche Zeit und ohne Budget.">A small set of everyday habits that help teachers build that feeling, with no extra time and no budget.</p>
-        <div class="hero-actions">
-          <a class="btn" href="mattering-kit-en.pdf" download data-en-href="mattering-kit-en.pdf" data-de-href="mattering-kit-de.pdf" data-en="Download the kit" data-de="Kit herunterladen">Download the kit</a>
-          <a class="ghost" href="#inside" data-en="See what's inside" data-de="Ein Blick hinein">See what's inside</a>
-        </div>
-      </div>
+    <!-- 1. Hero -->
+    <section class="tile tile--hero" aria-labelledby="hero-title">
+      <p class="label" data-en="AN OPEN RESOURCE FOR EDUCATORS" data-de="EINE FREIE RESSOURCE FÜR LEHRKRÄFTE">EINE FREIE RESSOURCE FÜR LEHRKRÄFTE</p>
+      <h1 class="hero-title" id="hero-title" data-en="Every child should know they matter." data-de="Jedes Kind sollte wissen, dass es zählt.">Jedes Kind sollte wissen, dass es zählt.</h1>
+      <p class="hero-sub" data-en="A handful of everyday habits that build that feeling. No extra time, no budget." data-de="Eine Handvoll alltäglicher Gewohnheiten, die genau dieses Gefühl schaffen. Ohne zusätzliche Zeit, ohne Budget.">Eine Handvoll alltäglicher Gewohnheiten, die genau dieses Gefühl schaffen. Ohne zusätzliche Zeit, ohne Budget.</p>
     </section>
 
-    <section class="features" id="inside">
-      <div class="container">
-        <p class="section-eyebrow" data-en="SAMPLE HABITS FROM THE KIT" data-de="BEISPIELE AUS DEM KIT">SAMPLE HABITS FROM THE KIT</p>
-        <div class="feature-grid">
-
-          <article class="pane">
-            <span class="marker" aria-hidden="true"></span>
-            <h2 class="pane-heading" data-en="Give every child a small job" data-de="Jedem Kind eine kleine Aufgabe">Give every child a small job</h2>
-            <p class="pane-body" data-en="Hand each child one small responsibility a day. We feel we matter when others need us." data-de="Geben Sie jedem Kind täglich eine kleine Verantwortung. Wir zählen, wenn andere uns brauchen.">Hand each child one small responsibility a day. We feel we matter when others need us.</p>
-          </article>
-
-          <article class="pane">
-            <span class="marker" aria-hidden="true"></span>
-            <h2 class="pane-heading" data-en="Mix the ones who never pair up" data-de="Neue Teams bilden">Mix the ones who never pair up</h2>
-            <p class="pane-body" data-en="Pair children who never team up. Helping someone outside your own group builds a bond." data-de="Lassen Sie Kinder zusammenarbeiten, die es sonst nie tun. Wer außerhalb der eigenen Gruppe hilft, verbindet sich.">Pair children who never team up. Helping someone outside your own group builds a bond.</p>
-          </article>
-
-          <article class="pane">
-            <span class="marker" aria-hidden="true"></span>
-            <h2 class="pane-heading" data-en="Greet them by name" data-de="Beim Namen begrüßen">Greet them by name</h2>
-            <p class="pane-body" data-en="Say every student's name at the door. Being seen is the smallest step, and it counts." data-de="Begrüßen Sie jeden Schüler an der Tür mit Namen. Gesehen zu werden ist der kleinste Schritt, und er zählt.">Say every student's name at the door. Being seen is the smallest step, and it counts.</p>
-          </article>
-
-        </div>
-      </div>
+    <!-- 2. Download -->
+    <section class="tile tile--cta" aria-labelledby="cta-label">
+      <p class="label" id="cta-label" data-en="THE KIT" data-de="DAS KIT">DAS KIT</p>
+      <a class="btn"
+         href="mattering-kit-de.pdf"
+         download
+         data-de-href="mattering-kit-de.pdf"
+         data-en-href="mattering-kit-en.pdf"
+         data-en="Download the kit"
+         data-de="Kit herunterladen">Kit herunterladen</a>
+      <p class="cta-note" data-en="PDF · free · no sign-up" data-de="PDF · kostenlos · ohne Anmeldung">PDF · kostenlos · ohne Anmeldung</p>
     </section>
 
-    <section class="features">
-      <div class="container">
-        <p class="section-eyebrow" data-en="ABOUT THE KIT" data-de="ÜBER DAS KIT">ABOUT THE KIT</p>
-        <div class="feature-grid">
-
-          <article class="pane">
-            <span class="marker" aria-hidden="true"></span>
-            <h2 class="pane-heading" data-en="Grounded in research" data-de="Wissenschaftlich fundiert">Grounded in research</h2>
-            <p class="pane-body" data-en="Built on a study of 700 people on how exclusion affects our sense of meaning, and what protects it." data-de="Basiert auf einer Studie mit 700 Personen dazu, wie Ausgrenzung das Sinnerleben beeinflusst, und was davor schützt.">Built on a study of 700 people on how exclusion affects our sense of meaning, and what protects it.</p>
-          </article>
-
-          <article class="pane">
-            <span class="marker" aria-hidden="true"></span>
-            <h2 class="pane-heading" data-en="Made with teachers" data-de="Mit Lehrkräften entwickelt">Made with teachers</h2>
-            <p class="pane-body" data-en="Shaped by interviews with teachers in the classrooms where it matters most, and reviewed by practitioners in prevention work." data-de="Entstanden aus Interviews mit Lehrkräften und geprüft von Fachleuten aus der Präventionsarbeit.">Shaped by interviews with teachers in the classrooms where it matters most, and reviewed by practitioners in prevention work.</p>
-          </article>
-
-          <article class="pane">
-            <span class="marker" aria-hidden="true"></span>
-            <h2 class="pane-heading" data-en="Free and open" data-de="Frei und offen">Free and open</h2>
-            <p class="pane-body" data-en="Bilingual, no sign-up, no cost. Download it today, use it tomorrow." data-de="Zweisprachig, ohne Anmeldung, ohne Kosten. Heute herunterladen, morgen einsetzen.">Bilingual, no sign-up, no cost. Download it today, use it tomorrow.</p>
-          </article>
-
-        </div>
-      </div>
+    <!-- 3. Evidence -->
+    <section class="tile tile--evidence" aria-labelledby="ev-label">
+      <p class="label" id="ev-label" data-en="WHERE IT COMES FROM" data-de="WORAUF ES BERUHT">WORAUF ES BERUHT</p>
+      <p class="evidence-body" data-en="Built on a study of 700 people on how exclusion affects our sense of meaning, shaped by interviews with teachers, and reviewed by practitioners in prevention work." data-de="Basiert auf einer Studie mit 700 Personen dazu, wie Ausgrenzung das Sinnerleben beeinflusst, entstanden aus Interviews mit Lehrkräften und geprüft von Fachleuten aus der Präventionsarbeit.">Basiert auf einer Studie mit 700 Personen dazu, wie Ausgrenzung das Sinnerleben beeinflusst, entstanden aus Interviews mit Lehrkräften und geprüft von Fachleuten aus der Präventionsarbeit.</p>
     </section>
 
-    <section class="closing">
-      <div class="container closing-inner">
-        <p class="closing-line" data-en="Start making it count." data-de="Fangen Sie klein an, es zählt.">Start making it count.</p>
-        <a class="btn" href="mattering-kit-en.pdf" download data-en-href="mattering-kit-en.pdf" data-de-href="mattering-kit-de.pdf" data-en="Download the kit" data-de="Kit herunterladen">Download the kit</a>
+    <!-- 4. Habit one -->
+    <article class="tile tile--habit" id="habit-1">
+      <p class="label" data-en="HABIT 01" data-de="GEWOHNHEIT 01">GEWOHNHEIT 01</p>
+      <h2 class="habit-title">
+        <button type="button" class="habit-toggle" aria-expanded="true" aria-controls="detail-1"
+                data-en="Give every child a small job" data-de="Jedem Kind eine kleine Aufgabe geben">Jedem Kind eine kleine Aufgabe geben</button>
+      </h2>
+      <p class="habit-why" data-en="A child feels they matter when they know someone needs them." data-de="Ein Kind spürt, dass es zählt, wenn es weiß, dass jemand es braucht.">Ein Kind spürt, dass es zählt, wenn es weiß, dass jemand es braucht.</p>
+
+      <div class="habit-detail" id="detail-1">
+        <p class="sublabel" data-en="THE RESEARCH" data-de="DIE FORSCHUNG">DIE FORSCHUNG</p>
+        <p class="detail-body" data-en="Feeling depended upon is one of the most direct routes to a sense of significance." data-de="Gebraucht zu werden ist einer der direktesten Wege zu einem Gefühl von Bedeutsamkeit.">Gebraucht zu werden ist einer der direktesten Wege zu einem Gefühl von Bedeutsamkeit.</p>
+        <p class="sublabel" data-en="IN THE CLASSROOM" data-de="IM KLASSENZIMMER">IM KLASSENZIMMER</p>
+        <p class="detail-body" data-en="Rotate the daily jobs. One waters the plants, one hands out sheets, one holds the door." data-de="Aufgaben täglich wechseln. Eines gießt die Pflanzen, eines teilt Blätter aus, eines hält die Tür.">Aufgaben täglich wechseln. Eines gießt die Pflanzen, eines teilt Blätter aus, eines hält die Tür.</p>
       </div>
-    </section>
+
+      <p class="hint" aria-hidden="true">
+        <span class="hint-sign"></span>
+        <span class="hint-open" data-en="Show details" data-de="Details anzeigen">Details anzeigen</span>
+        <span class="hint-close" data-en="Hide details" data-de="Details ausblenden">Details ausblenden</span>
+      </p>
+    </article>
+
+    <!-- 5. Habit two -->
+    <article class="tile tile--habit" id="habit-2">
+      <p class="label" data-en="HABIT 02" data-de="GEWOHNHEIT 02">GEWOHNHEIT 02</p>
+      <h2 class="habit-title">
+        <button type="button" class="habit-toggle" aria-expanded="true" aria-controls="detail-2"
+                data-en="Mix the children who never work together" data-de="Kinder mischen, die nie zusammenarbeiten">Kinder mischen, die nie zusammenarbeiten</button>
+      </h2>
+      <p class="habit-why" data-en="Belonging grows when a child helps someone outside their own circle." data-de="Zugehörigkeit wächst, wenn ein Kind jemandem außerhalb des eigenen Kreises hilft.">Zugehörigkeit wächst, wenn ein Kind jemandem außerhalb des eigenen Kreises hilft.</p>
+
+      <div class="habit-detail" id="detail-2">
+        <p class="sublabel" data-en="THE RESEARCH" data-de="DIE FORSCHUNG">DIE FORSCHUNG</p>
+        <p class="detail-body" data-en="A shared goal across group lines reduces division and builds connection." data-de="Ein gemeinsames Ziel über Gruppengrenzen hinweg baut Trennungen ab und schafft Verbindung.">Ein gemeinsames Ziel über Gruppengrenzen hinweg baut Trennungen ab und schafft Verbindung.</p>
+        <p class="sublabel" data-en="IN THE CLASSROOM" data-de="IM KLASSENZIMMER">IM KLASSENZIMMER</p>
+        <p class="detail-body" data-en="Build the next teams yourself. Give them one goal they can only reach together." data-de="Bilden Sie die nächsten Teams selbst. Geben Sie ihnen ein Ziel, das sie nur gemeinsam erreichen.">Bilden Sie die nächsten Teams selbst. Geben Sie ihnen ein Ziel, das sie nur gemeinsam erreichen.</p>
+      </div>
+
+      <p class="hint" aria-hidden="true">
+        <span class="hint-sign"></span>
+        <span class="hint-open" data-en="Show details" data-de="Details anzeigen">Details anzeigen</span>
+        <span class="hint-close" data-en="Hide details" data-de="Details ausblenden">Details ausblenden</span>
+      </p>
+    </article>
+
+    <!-- 6. Habit three -->
+    <article class="tile tile--habit" id="habit-3">
+      <p class="label" data-en="HABIT 03" data-de="GEWOHNHEIT 03">GEWOHNHEIT 03</p>
+      <h2 class="habit-title">
+        <button type="button" class="habit-toggle" aria-expanded="true" aria-controls="detail-3"
+                data-en="Greet every student by name" data-de="Jeden Schüler mit Namen begrüßen">Jeden Schüler mit Namen begrüßen</button>
+      </h2>
+      <p class="habit-why" data-en="Being seen is the smallest form of mattering, and the easiest to give." data-de="Gesehen zu werden ist die kleinste Form von Zählen und die einfachste.">Gesehen zu werden ist die kleinste Form von Zählen und die einfachste.</p>
+
+      <div class="habit-detail" id="detail-3">
+        <p class="sublabel" data-en="THE RESEARCH" data-de="DIE FORSCHUNG">DIE FORSCHUNG</p>
+        <p class="detail-body" data-en="Small, personal acknowledgement from a teacher shapes how included a child feels." data-de="Kleine, persönliche Zuwendung einer Lehrkraft beeinflusst, wie zugehörig sich ein Kind fühlt.">Kleine, persönliche Zuwendung einer Lehrkraft beeinflusst, wie zugehörig sich ein Kind fühlt.</p>
+        <p class="sublabel" data-en="IN THE CLASSROOM" data-de="IM KLASSENZIMMER">IM KLASSENZIMMER</p>
+        <p class="detail-body" data-en="Stand at the door and say each name. Keep a seating list nearby until they stick." data-de="Stehen Sie an der Tür und sagen Sie jeden Namen. Halten Sie eine Sitzliste bereit, bis sie sitzen.">Stehen Sie an der Tür und sagen Sie jeden Namen. Halten Sie eine Sitzliste bereit, bis sie sitzen.</p>
+      </div>
+
+      <p class="hint" aria-hidden="true">
+        <span class="hint-sign"></span>
+        <span class="hint-open" data-en="Show details" data-de="Details anzeigen">Details anzeigen</span>
+        <span class="hint-close" data-en="Hide details" data-de="Details ausblenden">Details ausblenden</span>
+      </p>
+    </article>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p data-en="An independent research project by Jona M. Ragogna." data-de="Ein unabhängiges Forschungsprojekt von Jona M. Ragogna.">An independent research project by Jona M. Ragogna.</p>
-      <p class="footer-meta">© 2026 &nbsp;·&nbsp; <a href="https://jonaragogna.com">jonaragogna.com</a></p>
-    </div>
+  <footer class="colophon">
+    <p class="colophon-who" data-en="An independent research project by Jona M. Ragogna." data-de="Ein unabhängiges Forschungsprojekt von Jona M. Ragogna.">Ein unabhängiges Forschungsprojekt von Jona M. Ragogna.</p>
+    <p class="colophon-meta">
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="license noopener" target="_blank">CC BY-SA 4.0</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://jonaragogna.com">jonaragogna.com</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <span>© 2026</span>
+    </p>
   </footer>
 
-  <script>
-    const buttons = document.querySelectorAll('[data-lang-btn]');
-    const nodes = document.querySelectorAll('[data-en]');
-    const links = document.querySelectorAll('[data-en-href]');
-    function setLang(lang){
-      document.documentElement.lang = lang;
-      nodes.forEach(n => { n.textContent = n.getAttribute('data-' + lang); });
-      links.forEach(a => { a.setAttribute('href', a.getAttribute('data-' + lang + '-href')); });
-      buttons.forEach(b => b.classList.toggle('is-active', b.getAttribute('data-lang-btn') === lang));
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  var textNodes  = document.querySelectorAll('[data-en]');
+  var hrefNodes  = document.querySelectorAll('[data-en-href]');
+  var labelNodes = document.querySelectorAll('[data-en-label]');
+  var langBtns   = document.querySelectorAll('[data-lang-btn]');
+  var toggles    = document.querySelectorAll('.habit-toggle');
+
+  function setLang(lang) {
+    root.setAttribute('lang', lang);
+
+    textNodes.forEach(function (n) {
+      var v = n.getAttribute('data-' + lang);
+      if (v !== null) { n.textContent = v; }
+    });
+
+    hrefNodes.forEach(function (n) {
+      var v = n.getAttribute('data-' + lang + '-href');
+      if (v) { n.setAttribute('href', v); }
+    });
+
+    labelNodes.forEach(function (n) {
+      var v = n.getAttribute('data-' + lang + '-label');
+      if (v) { n.setAttribute('aria-label', v); }
+    });
+
+    langBtns.forEach(function (b) {
+      var on = b.getAttribute('data-lang-btn') === lang;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  langBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      setLang(b.getAttribute('data-lang-btn'));
+    });
+  });
+
+  // Compartments start open in the markup so the page still works without
+  // JavaScript. Collapse them here, once we know scripting is available.
+  toggles.forEach(function (btn) {
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    var tile  = btn.closest('.tile--habit');
+    if (!panel || !tile) { return; }
+
+    function set(open) {
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.hidden = !open;
+      tile.classList.toggle('is-open', open);
     }
-    buttons.forEach(b => b.addEventListener('click', () => setLang(b.getAttribute('data-lang-btn'))));
-    setLang('en');
-  </script>
+
+    set(false);
+    btn.addEventListener('click', function () {
+      set(btn.getAttribute('aria-expanded') !== 'true');
+    });
+  });
+
+  setLang('de');
+})();
+</script>
 
 </body>
 </html>
