@@ -93,7 +93,54 @@
 
 </div>
 
-<script src="lang.js"></script>
+<script>
+(function () {
+  var root = document.documentElement;
+
+  var textNodes  = document.querySelectorAll('[data-en]');
+  var hrefNodes  = document.querySelectorAll('[data-en-href]');
+  var labelNodes = document.querySelectorAll('[data-en-label]');
+  var langBtns   = document.querySelectorAll('[data-lang-btn]');
+
+  function setLang(lang) {
+    root.setAttribute('lang', lang);
+
+    textNodes.forEach(function (n) {
+      var v = n.getAttribute('data-' + lang);
+      if (v !== null) { n.textContent = v; }
+    });
+
+    hrefNodes.forEach(function (n) {
+      var v = n.getAttribute('data-' + lang + '-href');
+      if (v) { n.setAttribute('href', v); }
+    });
+
+    labelNodes.forEach(function (n) {
+      var v = n.getAttribute('data-' + lang + '-label');
+      if (v) { n.setAttribute('aria-label', v); }
+    });
+
+    langBtns.forEach(function (b) {
+      var on = b.getAttribute('data-lang-btn') === lang;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+
+    try { localStorage.setItem('kit-lang', lang); } catch (e) {}
+  }
+
+  langBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      setLang(b.getAttribute('data-lang-btn'));
+    });
+  });
+
+  // Carry the choice across the two pages.
+  var saved = null;
+  try { saved = localStorage.getItem('kit-lang'); } catch (e) {}
+  setLang(saved === 'en' ? 'en' : 'de');
+})();
+</script>
 
 </body>
 </html>
