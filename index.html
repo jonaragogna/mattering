@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Jedes Kind zählt</title>
-<meta name="description" content="Zwei Seiten für Lehrkräfte über die kleinen Dinge, die Kindern das Gefühl geben, dass sie zählen. Kostenlos, auf Deutsch und Englisch.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Zwei Seiten für Lehrkräfte über die kleinen Dinge, die Kindern das Gefühl geben, dass sie zählen. Ein Entwurf, auf Anfrage erhältlich.">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jedes Kind zählt">
-<meta property="og:description" content="Zwei Seiten für Lehrkräfte. Kostenlos, auf Deutsch und Englisch.">
+<meta property="og:description" content="Zwei Seiten für Lehrkräfte. Ein Entwurf, auf Anfrage erhältlich.">
 <meta name="twitter:card" content="summary">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23ffffff'/><rect x='10' y='10' width='12' height='12' fill='%235b7fa3'/></svg>">
@@ -46,20 +47,15 @@
 
       <p class="hero-sub" data-en="Two pages for teachers on the small things that build that feeling." data-de="Zwei Seiten für Lehrkräfte über die kleinen Dinge, die dieses Gefühl aufbauen.">Zwei Seiten für Lehrkräfte über die kleinen Dinge, die dieses Gefühl aufbauen.</p>
 
-      <a class="btn"
-         href="files/mattering-kit-de.pdf"
-         download
-         data-de-href="files/mattering-kit-de.pdf"
-         data-en-href="files/mattering-kit-en.pdf"
-         data-en="Download the kit"
-         data-de="Kit herunterladen">Kit herunterladen</a>
-
-      <p class="cta-note" data-en="Free, no sign-up." data-de="Kostenlos, ohne Anmeldung.">Kostenlos, ohne Anmeldung.</p>
+      <div class="request">
+        <p class="request-note" data-en="The draft is not published for download. It goes out individually to people who work with young people, so that it can be read in context and corrected. Write to me and I will send it over." data-de="Der Entwurf steht nicht zum Download. Er wird einzeln an Menschen weitergegeben, die mit Jugendlichen arbeiten, damit er im Zusammenhang gelesen und korrigiert werden kann. Schreiben Sie mir gerne, dann sende ich ihn Ihnen zu.">Der Entwurf steht nicht zum Download. Er wird einzeln an Menschen weitergegeben, die mit Jugendlichen arbeiten, damit er im Zusammenhang gelesen und korrigiert werden kann. Schreiben Sie mir gerne, dann sende ich ihn Ihnen zu.</p>
+        <p class="request-mail"><a href="#" data-mail>jragogna [at] macalester.edu</a></p>
+      </div>
     </section>
 
     <section class="tile tile--inside" aria-labelledby="inside-label">
       <p class="label" id="inside-label" data-en="INSIDE" data-de="IM KIT">IM KIT</p>
-      <p class="inside-body" data-en="Page one is a five-minute audit that shows you which children in your class no adult really knows. Page two is four things you can do with those names." data-de="Seite eins ist ein Test, der etwa fünf Minuten dauert und zeigt, welche Kinder in Ihrer Klasse von keiner erwachsenen Person wirklich gekannt werden. Seite zwei sind vier Dinge, die Sie mit diesen Namen tun können.">Seite eins ist ein Test, der etwa fünf Minuten dauert und zeigt, welche Kinder in Ihrer Klasse von keiner erwachsenen Person wirklich gekannt werden. Seite zwei sind vier Dinge, die Sie mit diesen Namen tun können.</p>
+      <p class="inside-body" data-en="Page one is a short exercise: you write out your class and mark which children no adult in the school really knows. Page two is four practices for the school day that need no extra materials, each with a plain note on how well it is supported." data-de="Seite eins ist eine kurze Übung: Sie schreiben Ihre Klasse auf und markieren, welche Kinder von keiner erwachsenen Person in der Schule wirklich gekannt werden. Seite zwei sind vier Maßnahmen für den Schulalltag, die kein zusätzliches Material brauchen, jeweils mit einer nüchternen Einordnung, wie gut sie belegt sind.">Seite eins ist eine kurze Übung: Sie schreiben Ihre Klasse auf und markieren, welche Kinder von keiner erwachsenen Person in der Schule wirklich gekannt werden. Seite zwei sind vier Maßnahmen für den Schulalltag, die kein zusätzliches Material brauchen, jeweils mit einer nüchternen Einordnung, wie gut sie belegt sind.</p>
     </section>
 
   </main>
@@ -68,8 +64,7 @@
     <p>Jona M. Ragogna</p>
     <p class="colophon-meta">
       <a href="quellen.html" data-en="Sources" data-de="Quellen">Quellen</a>
-      <a href="mailto:jragogna@macalester.edu">jragogna@macalester.edu</a>
-      <span data-en="Free to use and share." data-de="Frei zu nutzen und weiterzugeben.">Frei zu nutzen und weiterzugeben.</span>
+      <a href="#" data-mail>jragogna [at] macalester.edu</a>
     </p>
   </footer>
 
@@ -80,9 +75,16 @@
   var root = document.documentElement;
 
   var textNodes  = document.querySelectorAll('[data-en]');
-  var hrefNodes  = document.querySelectorAll('[data-en-href]');
   var labelNodes = document.querySelectorAll('[data-en-label]');
   var langBtns   = document.querySelectorAll('[data-lang-btn]');
+
+  // The address is assembled at runtime, so it is not sitting in the
+  // page source as a harvestable mailto:. The visible text stays as
+  // written either way, and the link still works on click.
+  var user = 'jragogna', host = 'macalester.edu';
+  document.querySelectorAll('[data-mail]').forEach(function (a) {
+    a.setAttribute('href', 'mailto:' + user + '@' + host);
+  });
 
   function setLang(lang) {
     root.setAttribute('lang', lang);
@@ -90,11 +92,6 @@
     textNodes.forEach(function (n) {
       var v = n.getAttribute('data-' + lang);
       if (v !== null) { n.textContent = v; }
-    });
-
-    hrefNodes.forEach(function (n) {
-      var v = n.getAttribute('data-' + lang + '-href');
-      if (v) { n.setAttribute('href', v); }
     });
 
     labelNodes.forEach(function (n) {
@@ -117,7 +114,6 @@
     });
   });
 
-  // Carry the choice across the two pages.
   var saved = null;
   try { saved = localStorage.getItem('kit-lang'); } catch (e) {}
   setLang(saved === 'en' ? 'en' : 'de');
