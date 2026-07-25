@@ -6,7 +6,7 @@
 
 <title>Quellen — Jedes Kind zählt</title>
 <meta name="description" content="Die Literatur, auf der das Kit beruht.">
-<meta name="robots" content="noindex, follow">
+<meta name="robots" content="noindex, nofollow">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23ffffff'/><rect x='10' y='10' width='12' height='12' fill='%235b7fa3'/></svg>">
 
@@ -86,8 +86,7 @@
   <footer class="colophon">
     <p>Jona M. Ragogna</p>
     <p class="colophon-meta">
-      <a href="mailto:jragogna@macalester.edu">jragogna@macalester.edu</a>
-      <span data-en="Free to use and share." data-de="Frei zu nutzen und weiterzugeben.">Frei zu nutzen und weiterzugeben.</span>
+      <a href="#" data-mail>jragogna [at] macalester.edu</a>
     </p>
   </footer>
 
@@ -101,6 +100,11 @@
   var hrefNodes  = document.querySelectorAll('[data-en-href]');
   var labelNodes = document.querySelectorAll('[data-en-label]');
   var langBtns   = document.querySelectorAll('[data-lang-btn]');
+
+  var user = 'jragogna', host = 'macalester.edu';
+  document.querySelectorAll('[data-mail]').forEach(function (a) {
+    a.setAttribute('href', 'mailto:' + user + '@' + host);
+  });
 
   function setLang(lang) {
     root.setAttribute('lang', lang);
