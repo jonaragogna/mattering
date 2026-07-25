@@ -1,13 +1,13 @@
 /* =========================================================
    Jedes Kind zählt / The Mattering Kit
-   Bento tray: shared hairlines, square corners, pure white.
+   Two pages. White ground, one hairline weight, square corners.
    ========================================================= */
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-h1, h2, p, ul { margin: 0; }
-ul { padding: 0; list-style: none; }
+h1, p, ol { margin: 0; }
+ol { padding: 0; list-style: none; }
 a { color: inherit; text-decoration: none; }
 button {
   font: inherit;
@@ -16,23 +16,20 @@ button {
   border: 0;
   padding: 0;
   cursor: pointer;
-  text-align: left;
 }
 
 /* ---------- Tokens ---------- */
 :root {
-  --white:      #ffffff;
-  --ink:        #1a1a1a;
-  --ink-soft:   #6b6d72;   /* 5.17:1 on white */
-  --hairline:   #e4e4e4;
-  --tint:       #f6f7f8;   /* hover surface */
+  --white:     #ffffff;
+  --ink:       #1a1a1a;
+  --ink-soft:  #6b6d72;   /* 5.17:1 on white */
+  --hairline:  #e4e4e4;
 
-  --blue:       #5b7fa3;   /* marks and borders, non-text only */
-  --blue-text:  #47637d;   /* 6.27:1 on white — all blue text */
-  --blue-dark:  #354c61;   /* button hover */
-  --blue-wash:  #f2f5f8;   /* the one filled surface */
+  --blue:      #5b7fa3;   /* marks and borders, non-text only */
+  --blue-text: #47637d;   /* 6.27:1 on white — all blue text */
+  --blue-dark: #354c61;   /* button hover */
 
-  --pad:        clamp(1.5rem, 2.1vw, 2.125rem);
+  --pad:       clamp(1.75rem, 2.4vw, 2.5rem);
 }
 
 /* ---------- Base ---------- */
@@ -47,53 +44,14 @@ body {
 }
 
 .page {
-  max-width: 78rem;
+  max-width: 64rem;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 2rem;
 }
 
-/* ---------- Focus ---------- */
 :focus-visible {
   outline: 2px solid var(--blue-text);
   outline-offset: 3px;
-}
-
-.skip {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  z-index: 10;
-  background: var(--white);
-  border: 1px solid var(--ink);
-  padding: 0.75rem 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-.skip:focus { left: 1.25rem; top: 1.25rem; }
-
-/* ---------- Shared marks ---------- */
-.glyph {
-  width: 8px;
-  height: 8px;
-  background: var(--blue);
-  flex: 0 0 auto;
-}
-
-.label {
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-.sublabel {
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--blue-text);
-  margin-bottom: 0.3rem;
 }
 
 /* ---------- Masthead ---------- */
@@ -112,6 +70,13 @@ body {
   font-size: 1.0625rem;
   font-weight: 600;
   letter-spacing: -0.011em;
+}
+
+.glyph {
+  width: 8px;
+  height: 8px;
+  background: var(--blue);
+  flex: 0 0 auto;
 }
 
 .langswitch {
@@ -140,31 +105,18 @@ body {
 
 /* =========================================================
    The tray
-   One hairline weight everywhere: the container paints the
-   lines, the tiles sit on top in white, 1px gaps let the
-   background show through as shared dividers.
+   The container paints the hairlines, the tiles sit on top
+   in white, and the 1px gap lets the line show through.
    ========================================================= */
 .bento {
   display: grid;
   gap: 1px;
   background: var(--hairline);
   border: 1px solid var(--hairline);
-
   grid-template-columns: 1fr;
-  grid-template-areas:
-    "hero"
-    "cta"
-    "frame"
-    "audit"
-    "habit1"
-    "habit2"
-    "habit3"
-    "habit4"
-    "feedback";
 }
 
 .tile {
-  position: relative;
   background: var(--white);
   padding: var(--pad);
   display: flex;
@@ -172,256 +124,115 @@ body {
   min-width: 0;
 }
 
-.tile--hero     { grid-area: hero; }
-.tile--cta      { grid-area: cta; }
-.tile--frame    { grid-area: frame; }
-.tile--audit    { grid-area: audit; }
-#habit-1        { grid-area: habit1; }
-#habit-2        { grid-area: habit2; }
-#habit-3        { grid-area: habit3; }
-#habit-4        { grid-area: habit4; }
-.tile--feedback { grid-area: feedback; }
+.label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
 
 /* ---------- Hero ---------- */
 .tile--hero {
   justify-content: center;
   container-type: inline-size;
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
 
 .hero-title {
   margin-top: 1.5rem;
-  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4.5vw, 3.125rem);
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.026em;
   text-wrap: balance;
+  max-width: 18ch;
 }
 
-/* Size the headline against the tile it lives in, not the window. */
 @supports (font-size: 1cqi) {
-  .hero-title { font-size: clamp(1.875rem, 7.6cqi, 3rem); }
+  .hero-title { font-size: clamp(2rem, 6.4cqi, 3.125rem); }
 }
 
 .hero-sub {
-  margin-top: 1.125rem;
-  max-width: 40ch;
+  margin-top: 1.25rem;
+  max-width: 42ch;
   font-size: clamp(1rem, 1.15vw, 1.0625rem);
   color: var(--ink-soft);
   line-height: 1.55;
 }
-
-/* ---------- Download ---------- */
-.tile--cta { justify-content: center; }
 
 .btn {
   display: inline-block;
   align-self: flex-start;
   max-width: 100%;
   text-align: center;
-  margin-top: 1.375rem;
+  margin-top: 2rem;
   background: var(--blue-text);
   color: var(--white);
   padding: 0.9375rem 1.75rem;
   font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.005em;
   transition: background 0.15s ease;
 }
 .btn:hover { background: var(--blue-dark); }
 
 .cta-note {
-  margin-top: 0.9375rem;
-  font-size: 0.8125rem;
-  color: var(--ink-soft);
-  letter-spacing: 0.01em;
-}
-
-/* ---------- What this is / is not ---------- */
-.frame-body {
-  margin-top: 1rem;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  max-width: 52ch;
-}
-
-.tile--frame .sublabel { margin-top: 1.5rem; }
-
-.notlist {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  line-height: 1.45;
-  color: var(--ink);
-  max-width: 52ch;
-}
-.notlist li {
-  position: relative;
-  padding-left: 1.125rem;
-}
-/* A struck square: the thing this is not. */
-.notlist li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.5em;
-  width: 8px;
-  height: 1px;
-  background: var(--blue);
-}
-
-/* ---------- The audit ---------- */
-.tile--audit { background: var(--blue-wash); }
-
-.audit-title {
-  margin-top: 1.125rem;
-  font-size: 1.375rem;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.014em;
-}
-
-.audit-body {
   margin-top: 0.875rem;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  max-width: 52ch;
-}
-
-.audit-meta {
-  margin-top: auto;
-  padding-top: 1.25rem;
   font-size: 0.8125rem;
   color: var(--ink-soft);
 }
 
-/* ---------- Practices ---------- */
-.tile--habit {
-  min-height: 15.5rem;
-  transition: background 0.18s ease;
-}
-.tile--habit:hover { background: var(--tint); }
-.tile--habit:focus-within { background: var(--tint); }
-
-.habit-title {
-  margin-top: 1.125rem;
-  font-size: 1.1875rem;
-  font-weight: 500;
-  line-height: 1.28;
-  letter-spacing: -0.012em;
-  text-wrap: balance;
+/* ---------- Inside ---------- */
+.inside-body {
+  margin-top: 1rem;
+  max-width: 58ch;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
 }
 
-/* The button is the real control; its pseudo-element stretches
-   the hit area across the whole tile. */
-.habit-toggle::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-.habit-toggle:focus-visible { outline: none; }
-.tile--habit:has(.habit-toggle:focus-visible) {
-  outline: 2px solid var(--blue-text);
-  outline-offset: -2px;
+/* ---------- Sources ---------- */
+.sources-title {
+  margin-top: 1.25rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.habit-why {
+.sources-intro {
   margin-top: 0.75rem;
   font-size: 0.9375rem;
-  line-height: 1.55;
   color: var(--ink-soft);
 }
 
-/* Detail sits above the hit overlay so it stays selectable. */
-.habit-detail {
-  position: relative;
-  z-index: 1;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--hairline);
-}
-.habit-detail[hidden] { display: none; }
-
-.detail-body {
+.reflist {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
   font-size: 0.875rem;
-  line-height: 1.45;
-  color: var(--ink);
+  line-height: 1.5;
 }
-.detail-body + .sublabel { margin-top: 0.8125rem; }
+.reflist li {
+  padding: 0.9375rem 0;
+  border-top: 1px solid var(--hairline);
+  max-width: 76ch;
+}
+.reflist li:last-child { border-bottom: 1px solid var(--hairline); }
+.reflist i { font-style: italic; }
 
-/* The honest bit, marked as its own kind of statement. */
-.detail-body--evidence {
-  border-left: 2px solid var(--hairline);
-  padding-left: 0.75rem;
-  color: var(--ink-soft);
+.backlink {
+  margin-top: 2rem;
+  font-size: 0.875rem;
 }
-
-.hint {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: auto;
-  padding-top: 1.25rem;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--blue-text);
-}
-
-/* A square that becomes a bar: the lid. */
-.hint-sign {
-  position: relative;
-  width: 9px;
-  height: 9px;
-  flex: 0 0 auto;
-  border: 1px solid var(--blue);
-  transition: background 0.18s ease, border-color 0.18s ease;
-}
-.hint-sign::after {
-  content: "";
-  position: absolute;
-  left: 1px;
-  right: 1px;
-  top: 3px;
-  height: 1px;
-  background: var(--white);
-  opacity: 0;
-  transition: opacity 0.18s ease;
-}
-.is-open .hint-sign {
-  background: var(--blue);
-  border-color: var(--blue);
-}
-.is-open .hint-sign::after { opacity: 1; }
-
-.hint-close { display: none; }
-.is-open .hint-open  { display: none; }
-.is-open .hint-close { display: inline; }
-
-/* ---------- Feedback ---------- */
-.feedback-body {
-  margin-top: 1rem;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  max-width: 52ch;
-}
-
-.feedback-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.625rem;
-  margin-top: 1rem;
-  font-size: 0.9375rem;
-}
-.feedback-links a {
+.backlink a {
   color: var(--blue-text);
   border-bottom: 1px solid var(--hairline);
   padding-bottom: 1px;
   transition: border-color 0.15s ease;
 }
-.feedback-links a:hover { border-color: var(--blue); }
+.backlink a:hover { border-color: var(--blue); }
 
 /* ---------- Colophon ---------- */
 .colophon {
@@ -434,94 +245,49 @@ body {
   font-size: 0.8125rem;
   color: var(--ink-soft);
 }
-.dot { color: var(--hairline); }
-
-/* =========================================================
-   Medium: two columns
-   ========================================================= */
-@media (min-width: 34rem) {
-  .page { padding: 2rem 1.75rem 2.25rem; }
-
-  .bento {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "hero     hero"
-      "cta      cta"
-      "frame    frame"
-      "audit    audit"
-      "habit1   habit1"
-      "habit2   habit2"
-      "habit3   habit3"
-      "habit4   habit4"
-      "feedback feedback";
-  }
+.colophon-meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1.25rem;
+}
+.colophon a {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.colophon a:hover {
+  color: var(--ink);
+  border-color: var(--blue);
 }
 
 /* =========================================================
-   Tablet: hero and download share a row
+   Wider: hero and the inside note share a row
    ========================================================= */
 @media (min-width: 48rem) {
   .page { padding: 2rem 2rem 2.25rem; }
 
-  .bento {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-      "hero     hero   cta    cta"
-      "frame    frame  audit  audit"
-      "habit1   habit1 habit2 habit2"
-      "habit3   habit3 habit4 habit4"
-      "feedback feedback feedback feedback";
-  }
+  .bento { grid-template-columns: 1.7fr 1fr; }
+  .tile--sources { grid-column: 1 / -1; }
 }
 
-/* =========================================================
-   Large: same tray, more air
-   ========================================================= */
 @media (min-width: 64rem) {
   .page { padding: 2.25rem 2.5rem 2.5rem; }
-
-  .bento {
-    grid-auto-rows: minmax(min-content, auto);
-    grid-template-areas:
-      "hero     hero     hero     cta"
-      "frame    frame    audit    audit"
-      "habit1   habit1   habit2   habit2"
-      "habit3   habit3   habit4   habit4"
-      "feedback feedback feedback feedback";
-  }
-
-  .hero-sub { max-width: 36ch; }
 }
 
 /* =========================================================
-   Motion and fallbacks
+   Motion
    ========================================================= */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-}
-
-/* Coarse pointers get no hover tint: it sticks after a tap. */
-@media (hover: none) {
-  .tile--habit:hover { background: var(--white); }
-}
-
-/* No :has() support: fall back to a visible ring on the button. */
-@supports not selector(:has(*)) {
-  .habit-toggle:focus-visible {
-    outline: 2px solid var(--blue-text);
-    outline-offset: 3px;
   }
 }
 
 /* ---------- Print ---------- */
 @media print {
-  .langswitch, .skip, .hint { display: none; }
+  .langswitch, .btn, .cta-note { display: none; }
   .bento { background: none; border: 0; gap: 0; display: block; }
   .tile { border-bottom: 1px solid #ccc; padding: 1rem 0; }
-  .tile--audit { background: none; }
-  .habit-detail[hidden] { display: block !important; }
 }
