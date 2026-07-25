@@ -162,26 +162,36 @@ body {
   line-height: 1.55;
 }
 
-.btn {
-  display: inline-block;
+/* The one emphasised element. Outlined, not filled: a filled
+   button promises a download, and there is no download. */
+.request {
   align-self: flex-start;
   max-width: 100%;
-  text-align: center;
   margin-top: 2rem;
-  background: var(--blue-text);
-  color: var(--white);
-  padding: 0.9375rem 1.75rem;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background 0.15s ease;
+  border: 1px solid var(--ink);
+  padding: 1.25rem 1.5rem;
 }
-.btn:hover { background: var(--blue-dark); }
 
-.cta-note {
-  margin-top: 0.875rem;
-  font-size: 0.8125rem;
+.request-note {
+  max-width: 44ch;
+  font-size: 0.875rem;
+  line-height: 1.55;
   color: var(--ink-soft);
 }
+
+.request-mail {
+  margin-top: 1rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+}
+.request-mail a {
+  color: var(--blue-text);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 2px;
+  transition: border-color 0.15s ease;
+  overflow-wrap: anywhere;
+}
+.request-mail a:hover { border-color: var(--blue); }
 
 /* ---------- Inside ---------- */
 .inside-body {
@@ -287,7 +297,7 @@ body {
 
 /* ---------- Print ---------- */
 @media print {
-  .langswitch, .btn, .cta-note { display: none; }
+  .langswitch { display: none; }
   .bento { background: none; border: 0; gap: 0; display: block; }
   .tile { border-bottom: 1px solid #ccc; padding: 1rem 0; }
 }
