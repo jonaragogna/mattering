@@ -1,0 +1,8 @@
+# Must sit at the ROOT of the domain to have any effect.
+# Every PDF lives in /files/ so this one rule covers them all.
+
+User-agent: *
+Disallow: /files/
+
+User-agent: Googlebot
+Disallow: /files/
